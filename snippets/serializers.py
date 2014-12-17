@@ -11,6 +11,9 @@ class SnippetSerializer(serializers.HyperlinkedModelSerializer):
         model = Snippet
         fields = ('url', 'highlight', 'owner', 'title', 'code', 'linenos', 'language', 'style')
 
+    def create(self, validated_data):
+        return Snippet.objects.create(**validated_data)
+
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     snippets = serializers.HyperlinkedRelatedField(many=True, view_name='snippet-detail', read_only=True)
