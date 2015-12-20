@@ -1,0 +1,4 @@
+Django>=1.8,<1.9
+djangorestframework>=3.3.2,<3.4
+Pygments>=2.0,<2.1
+httpie>=0.8,<0.9
